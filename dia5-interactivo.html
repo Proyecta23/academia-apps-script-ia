@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 5 - Pull Requests: Guía Visual Interactiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .step-card { animation: fadeIn 0.5s ease-out; }
+        .step-card:hover { transform: translateY(-4px); transition: all 0.3s; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+        
+        <!-- Header -->
+        <div class="bg-white rounded-2xl shadow-2xl p-8 mb-8">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h1 class="text-4xl font-bold text-indigo-900 mb-2">🔀 Día 5: Pull Requests</h1>
+                    <p class="text-xl text-gray-600">El Taller de Experimentos - Guía Visual Interactiva</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm text-gray-500">Academia Apps Script + IA</div>
+                    <div class="text-lg font-semibold text-indigo-600">Semana 1 • 1h 40min</div>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-6 text-white">
+                <h2 class="text-2xl font-bold mb-2">🎯 Lo que aprenderás hoy</h2>
+                <p class="text-lg opacity-90">Pull Request = Experimento en taller → Revisar → Si funciona → Pasar a producción. Main NUNCA se rompe porque pruebas ANTES de mergear.</p>
+            </div>
+        </div>
+
+        <!-- Concepto Principal -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">💡 El Concepto Clave</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border-2 border-blue-300">
+                    <div class="text-4xl mb-3">🏠</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Main = Producción</h3>
+                    <p class="text-blue-800">Tu código que FUNCIONA. Sagrado. Nunca se rompe.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border-2 border-purple-300">
+                    <div class="text-4xl mb-3">🔨</div>
+                    <h3 class="text-xl font-bold text-purple-900 mb-2">Rama = Taller</h3>
+                    <p class="text-purple-800">Experimentos. Si sale mal, lo borras. Main sigue intacto.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border-2 border-green-300">
+                    <div class="text-4xl mb-3">✅</div>
+                    <h3 class="text-xl font-bold text-green-900 mb-2">PR = Revisión</h3>
+                    <p class="text-green-800">"¿Apruebas estos cambios?" Solo lo bueno pasa a main.</p>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+                <p class="text-yellow-900 font-semibold">🔑 Regla de Oro: Main siempre funciona porque NUNCA editas ahí directamente. Siempre: rama → prueba → PR → merge.</p>
+            </div>
+        </div>
+
+        <!-- Flujo Visual Paso a Paso -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">🌐 El Flujo Completo (tu experiencia real)</h2>
+            
+            <div class="space-y-4">
+                <!-- Paso 1 -->
+                <div class="step-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-6 border-l-4 border-blue-500 shadow-lg">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold flex-shrink-0">1</div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Crear Rama EN GITHUB (nube)</h3>
+                            <p class="text-blue-800 mb-3">Click en dropdown "main" → Escribes "mejora-comentarios" → Create branch</p>
+                            <div class="bg-white rounded-lg p-4 border border-blue-300">
+                                <div class="font-mono text-sm space-y-1">
+                                    <div class="text-blue-600">☁️ GitHub: rama "mejora-comentarios" creada</div>
+                                    <div class="text-gray-500">💻 Local: aún NO existe (nunca la bajaste)</div>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-sm text-blue-700 bg-blue-50 p-3 rounded">
+                                💡 <strong>Importante:</strong> La rama vive SOLO en GitHub por ahora
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="step-card bg-gradient-to-r from-green-50 to-green-100 rounded-xl p-6 border-l-4 border-green-500 shadow-lg">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold flex-shrink-0">2</div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-green-900 mb-2">Editar EN GITHUB (web)</h3>
+                            <p class="text-green-800 mb-3">Asegúrate estar en rama "mejora-comentarios" → Click en Code.gs → ✏️ Edit → Agregar JSDoc</p>
+                            <div class="bg-white rounded-lg p-4 border border-green-300">
+                                <div class="font-mono text-sm space-y-1">
+                                    <div class="text-green-600">✅ Cambios SOLO en rama experimental</div>
+                                    <div class="text-green-600">✅ Main intacto (producción segura)</div>
+                                    <div class="text-gray-500">💻 Local: sigue sin cambios</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="step-card bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-xl p-6 border-l-4 border-yellow-500 shadow-lg">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-yellow-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold flex-shrink-0">3</div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-yellow-900 mb-2">Crear Pull Request</h3>
+                            <p class="text-yellow-800 mb-3">Banner amarillo "Compare & pull request" → Describe cambios → Create PR</p>
+                            <div class="bg-white rounded-lg p-4 border border-yellow-300">
+                                <div class="space-y-2">
+                                    <div class="font-semibold text-yellow-900">📝 Título:</div>
+                                    <div class="font-mono text-sm bg-gray-50 p-2 rounded">"Agregar documentación JSDoc"</div>
+                                    <div class="font-semibold text-yellow-900 mt-2">📋 Descripción:</div>
+                                    <div class="text-sm bg-gray-50 p-2 rounded">
+                                        - Agregado header con información<br>
+                                        - Documentadas funciones con JSDoc<br>
+                                        - Mejorada legibilidad
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-sm text-yellow-800 bg-yellow-50 p-3 rounded">
+                                💬 PR = "¿Apruebas estos cambios para main?"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="step-card bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl p-6 border-l-4 border-purple-500 shadow-lg">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-purple-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold flex-shrink-0">4</div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-purple-900 mb-2">GitHub Verifica Automáticamente</h3>
+                            <p class="text-purple-800 mb-3">Sistema verifica que no haya conflictos</p>
+                            <div class="bg-white rounded-lg p-4 border border-purple-300">
+                                <div class="space-y-2">
+                                    <div class="flex items-center gap-2 text-green-600">
+                                        <span class="text-2xl">✅</span>
+                                        <span class="font-semibold">"No conflicts with base branch"</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-green-600">
+                                        <span class="text-2xl">✅</span>
+                                        <span class="font-semibold">"Safe to merge"</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-sm text-purple-800 bg-purple-50 p-3 rounded">
+                                🚀 <strong>En Semana 3:</strong> Aquí correrán TESTS automáticos (lint, validaciones, etc.)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 5 -->
+                <div class="step-card bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-xl p-6 border-l-4 border-indigo-500 shadow-lg">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-indigo-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold flex-shrink-0">5</div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-indigo-900 mb-2">Merge a Main (Producción)</h3>
+                            <p class="text-indigo-800 mb-3">Click "Merge pull request" → Confirm → Los cambios pasan a main</p>
+                            <div class="bg-white rounded-lg p-4 border border-indigo-300">
+                                <div class="font-mono text-sm space-y-1">
+                                    <div class="text-indigo-600">🔀 Fusionando mejora-comentarios → main</div>
+                                    <div class="text-green-600">✅ Merge exitoso</div>
+                                    <div class="text-indigo-600">📦 Main ahora tiene los cambios</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 6 -->
+                <div class="step-card bg-gradient-to-r from-red-50 to-red-100 rounded-xl p-6 border-l-4 border-red-500 shadow-lg">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold flex-shrink-0">6</div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-red-900 mb-2">Delete Branch en GitHub (Limpieza)</h3>
+                            <p class="text-red-800 mb-3">Click "Delete branch" → Ya no necesitas el taller</p>
+                            <div class="bg-white rounded-lg p-4 border border-red-300">
+                                <div class="font-mono text-sm space-y-1">
+                                    <div class="text-red-600">🗑️ Rama "mejora-comentarios" borrada en GitHub</div>
+                                    <div class="text-gray-500">💻 Nunca existió en local</div>
+                                    <div class="text-green-600">✅ Main tiene todo lo bueno</div>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-sm text-red-800 bg-red-50 p-3 rounded">
+                                ⚠️ <strong>Clave:</strong> Rama borrada EN GITHUB, nunca existió en tu computadora
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 7 -->
+                <div class="step-card bg-gradient-to-r from-teal-50 to-teal-100 rounded-xl p-6 border-l-4 border-teal-500 shadow-lg">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-teal-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold flex-shrink-0">7</div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-teal-900 mb-2">Sincronizar Local (Bajar cambios)</h3>
+                            <p class="text-teal-800 mb-3">Terminal: git pull → Bajas main actualizado a tu computadora</p>
+                            <div class="bg-gray-900 rounded-lg p-4">
+                                <div class="font-mono text-sm space-y-1 text-green-400">
+                                    <div>$ git checkout main</div>
+                                    <div>$ git pull</div>
+                                    <div class="text-cyan-400"># Downloading...</div>
+                                    <div class="text-white">✅ Local = GitHub (sincronizados)</div>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-sm text-teal-800 bg-teal-50 p-3 rounded">
+                                🔄 <strong>Ahora sí:</strong> Tu computadora tiene los cambios que hiciste en GitHub
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confusiones Resueltas -->
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl shadow-xl p-8 mb-8 border-2 border-amber-300">
+            <h2 class="text-3xl font-bold text-amber-900 mb-6">⚠️ Confusiones Comunes Resueltas</h2>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-lg p-6 shadow">
+                    <div class="flex items-start gap-3">
+                        <span class="text-3xl">❓</span>
+                        <div>
+                            <h3 class="font-bold text-amber-900 mb-2">Pregunta: "¿Por qué no veo 'mejora-comentarios' en el dropdown de GitHub?"</h3>
+                            <p class="text-amber-800"><strong>Respuesta:</strong> Porque la BORRASTE después del merge. Ya cumplió su propósito (los cambios están en main).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow">
+                    <div class="flex items-start gap-3">
+                        <span class="text-3xl">❓</span>
+                        <div>
+                            <h3 class="font-bold text-amber-900 mb-2">Pregunta: "¿Por qué 'nueva-funcion' está en mi local pero no en GitHub?"</h3>
+                            <p class="text-amber-800"><strong>Respuesta:</strong> Porque la creaste en local pero NUNCA hiciste: <code class="bg-gray-100 px-2 py-1 rounded">git push origin nueva-funcion</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-lg p-6 shadow-lg">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-indigo-900 mb-2">🔑 Regla Fundamental</div>
+                        <div class="text-xl text-indigo-800 mb-3">Crear rama ≠ Subirla a GitHub</div>
+                        <div class="bg-white rounded p-4 font-mono text-indigo-600 font-bold">
+                            git push origin [rama]
+                        </div>
+                        <div class="text-sm text-indigo-700 mt-2">↑ Esto es lo que sube la rama a GitHub</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navegación GitHub -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">🗺️ Navegación en GitHub (Interfaz Web)</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-6 border-2 border-indigo-300">
+                    <h3 class="font-bold text-indigo-900 mb-2 text-lg">📋 Dropdown "main"</h3>
+                    <p class="text-indigo-800">Cambiar entre ramas disponibles. Solo muestra ramas que existen EN GITHUB.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border-2 border-green-300">
+                    <h3 class="font-bold text-green-900 mb-2 text-lg">🔀 Pestaña "Pull requests"</h3>
+                    <p class="text-green-800">Ver PRs abiertos (Open) y cerrados/mergeados (Closed).</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border-2 border-purple-300">
+                    <h3 class="font-bold text-purple-900 mb-2 text-lg">📊 Insights → Network</h3>
+                    <p class="text-purple-800">Gráfico visual de TODAS tus ramas y commits. ¡MUY ÚTIL!</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border-2 border-blue-300">
+                    <h3 class="font-bold text-blue-900 mb-2 text-lg">👁️ Click en commit</h3>
+                    <p class="text-blue-800">Ver cambios: 🟢 verde = líneas agregadas, 🔴 rojo = líneas eliminadas.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comandos Clave -->
+        <div class="bg-gray-900 rounded-2xl shadow-xl p-8 mb-8">
+            <h2 class="text-3xl font-bold text-white mb-6">⌨️ Comandos Clave del Día 5</h2>
+            
+            <div class="space-y-3">
+                <div class="bg-gray-800 rounded-lg p-4">
+                    <div class="text-green-400 font-mono mb-1">git pull</div>
+                    <div class="text-gray-300 text-sm">Bajar cambios de GitHub a tu computadora local</div>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg p-4">
+                    <div class="text-green-400 font-mono mb-1">git branch</div>
+                    <div class="text-gray-300 text-sm">Ver ramas LOCALES (solo en tu computadora)</div>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg p-4">
+                    <div class="text-green-400 font-mono mb-1">git branch -r</div>
+                    <div class="text-gray-300 text-sm">Ver ramas REMOTAS (en GitHub)</div>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg p-4">
+                    <div class="text-green-400 font-mono mb-1">git branch -a</div>
+                    <div class="text-gray-300 text-sm">Ver TODAS las ramas (locales + remotas)</div>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg p-4">
+                    <div class="text-green-400 font-mono mb-1">git log --oneline -5</div>
+                    <div class="text-gray-300 text-sm">Ver últimos 5 commits en formato compacto</div>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg p-4">
+                    <div class="text-green-400 font-mono mb-1">git push origin [rama]</div>
+                    <div class="text-gray-300 text-sm">Subir una rama local a GitHub</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkpoint -->
+        <div class="bg-gradient-to-r from-green-100 to-emerald-100 rounded-2xl shadow-xl p-8 mb-8 border-2 border-green-400">
+            <h2 class="text-3xl font-bold text-green-900 mb-4">🎯 Checkpoint del Día 5</h2>
+            <div class="space-y-3">
+                <div class="flex items-start gap-3">
+                    <span class="text-2xl">✅</span>
+                    <p class="text-green-800 text-lg">¿Creaste un PR en GitHub, lo mergeaste, y bajaste cambios con git pull?</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-2xl">✅</span>
+                    <p class="text-green-800 text-lg">¿Entiendes que ramas locales ≠ ramas en GitHub?</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-2xl">✅</span>
+                    <p class="text-green-800 text-lg">¿Sabes que crear rama NO la sube automáticamente a GitHub?</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-2xl">✅</span>
+                    <p class="text-green-800 text-lg">¿Puedes navegar en GitHub: dropdown de ramas, PR tab, Network graph?</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl shadow-xl p-8 text-white text-center">
+            <h3 class="text-2xl font-bold mb-3">🎓 ¡Día 5 Completado!</h3>
+            <p class="text-lg mb-4">Ahora entiendes el flujo profesional de Pull Requests</p>
+            <div class="bg-white bg-opacity-20 rounded-lg p-4 max-w-2xl mx-auto">
+                <p class="text-sm">
+                    <strong>Próximo paso:</strong> Día 6 - Proyecto real con Apps Script<br>
+                    Aplicarás todo lo aprendido en un repositorio profesional
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
