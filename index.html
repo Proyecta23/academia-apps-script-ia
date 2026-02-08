@@ -26,6 +26,8 @@
                         day: 1,
                         title: "Git Básico - Tu Primera Versión",
                         duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/VdGzPZ31ts8",
+                        videoTitle: "Git y GitHub desde cero - Tutorial en español",
                         theory: "Git es como 'guardar versiones' de tu código. Cada vez que algo funciona, guardas un 'snapshot'. Si algo se rompe, vuelves atrás.",
                         practice: [
                             "Instala Git desde git-scm.com",
@@ -52,6 +54,8 @@
                         day: 2,
                         title: "GitHub - Tu Código en la Nube",
                         duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/mBYSUUnMt9M",
+                        videoTitle: "Cómo subir proyecto a GitHub - Paso a paso",
                         theory: "GitHub es como Google Drive pero para código. Tu código vive ahí, con historial completo y accesible desde cualquier lugar.",
                         practice: [
                             "Entra a github.com (ya tienes cuenta)",
@@ -76,6 +80,8 @@
                         day: 3,
                         title: "Branches - Experimenta Sin Romper",
                         duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/MnUd31TvBoU",
+                        videoTitle: "Git Branches explicado fácil - Ramas en Git",
                         theory: "Las ramas (branches) son copias temporales. Trabajas en 'dev', pruebas, y solo si funciona lo fusionas a 'main'. ¡Nunca rompes producción!",
                         practice: [
                             "git branch dev (crea rama de desarrollo)",
@@ -101,6 +107,8 @@
                         day: 4,
                         title: "Terminal Básico - Navega como Pro",
                         duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/PI4y-T4n2gY",
+                        videoTitle: "Terminal desde cero - Comandos básicos",
                         theory: "La terminal es más rápida que clicks. 5 comandos básicos te hacen productivo.",
                         practice: [
                             "pwd (¿dónde estoy?)",
@@ -127,6 +135,8 @@
                         day: 5,
                         title: "Pull Requests - Código Revisado por IA",
                         duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/BPns9r76vSI",
+                        videoTitle: "Pull Requests en GitHub - Tutorial completo",
                         theory: "Pull Requests (PR) = propones cambios antes de aplicarlos. Aquí la IA puede revisar tu código antes de que rompa algo.",
                         practice: [
                             "En GitHub, crea rama 'feature-nueva' desde web",
@@ -150,6 +160,8 @@
                         day: 6,
                         title: "Proyecto Semana 1 - Repo Real de Apps Script",
                         duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/heh4OeB9A-c",
+                        videoTitle: "Apps Script + GitHub - Integración completa",
                         theory: "Aplica todo: crea un repo real con código de Apps Script que ya uses.",
                         practice: [
                             "Crea repo 'mi-apps-script-real' en GitHub",
@@ -178,6 +190,8 @@
                         day: 7,
                         title: "Node.js - El Motor que Necesitas",
                         duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/i3OdKwuBjeM",
+                        videoTitle: "Node.js desde cero - Instalación y primeros pasos",
                         theory: "Node.js te permite ejecutar JavaScript fuera del navegador. npm es su 'tienda de herramientas'. clasp necesita Node.js para funcionar.",
                         practice: [
                             "Descarga Node.js desde nodejs.org (versión LTS)",
@@ -199,6 +213,446 @@
                         ],
                         checkpoint: "¿Node.js y npm funcionan en tu terminal?",
                         resources: ["https://nodejs.org"]
+                    },
+                    {
+                        day: 8,
+                        title: "npm - Instala Herramientas como Pro",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/ZVnjOPwW4ZA",
+                        videoTitle: "npm - Gestor de paquetes de Node.js explicado",
+                        theory: "npm instala paquetes (librerías/herramientas). Algunos se instalan 'global' (disponibles en todo tu sistema), otros 'local' (solo en un proyecto).",
+                        practice: [
+                            "npm install -g @google/clasp (instala clasp globalmente)",
+                            "clasp --version (verifica instalación)",
+                            "En un proyecto: npm install fecha (ejemplo local)",
+                            "Mira package.json - ahora tiene 'dependencies'",
+                            "node_modules/ apareció (ahí están las librerías)",
+                            "Crea .gitignore y agrega 'node_modules/'",
+                            "git add . && git commit -m 'Agregado npm'",
+                            "Nunca subas node_modules a GitHub (es enorme)"
+                        ],
+                        commands: [
+                            "npm install -g [paquete] - instala globalmente",
+                            "npm install [paquete] - instala localmente",
+                            "npm list - muestra paquetes instalados",
+                            "npm uninstall [paquete]"
+                        ],
+                        checkpoint: "¿Puedes instalar clasp y verificar que funciona?",
+                        resources: []
+                    },
+                    {
+                        day: 9,
+                        title: "clasp Login - Conecta con Google",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/jqQTd-69FIM",
+                        videoTitle: "Google clasp - Desarrolla Apps Script localmente",
+                        theory: "clasp es la herramienta oficial de Google para trabajar con Apps Script desde tu computadora. Primero debes autenticarte.",
+                        practice: [
+                            "clasp login (abre navegador)",
+                            "Selecciona tu cuenta de Google",
+                            "Autoriza clasp",
+                            "Verás: 'Authorization successful'",
+                            "clasp create --title 'Mi Primer Proyecto clasp' --type standalone",
+                            "¡Acabas de crear Apps Script desde terminal!",
+                            "Aparecerán: appsscript.json y .clasp.json",
+                            "Abre .clasp.json - tiene el scriptId",
+                            "Ve a script.google.com - ¡ahí está tu proyecto!"
+                        ],
+                        commands: [
+                            "clasp login",
+                            "clasp logout",
+                            "clasp create --title [nombre] --type standalone",
+                            "clasp list"
+                        ],
+                        checkpoint: "¿Puedes crear un proyecto de Apps Script desde terminal?",
+                        resources: ["https://github.com/google/clasp"]
+                    },
+                    {
+                        day: 10,
+                        title: "clasp Push/Pull - Sincroniza Código",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/L9WPH7y2Mw4",
+                        videoTitle: "clasp push y pull - Sincroniza Apps Script",
+                        theory: "push = sube tu código local a Google. pull = descarga código de Google a local. Siempre trabaja local, sube cuando esté listo.",
+                        practice: [
+                            "En tu proyecto clasp, crea archivo Code.gs",
+                            "Escribe función simple: function saludar() { Logger.log('Hola'); }",
+                            "clasp push (sube a Google)",
+                            "Ve a script.google.com - ¡tu código está ahí!",
+                            "Edita en Google (agrega comentario)",
+                            "clasp pull (descarga cambios)",
+                            "Mira Code.gs local - ¡tiene el comentario!",
+                            "Workflow: edita local → push → prueba en Google"
+                        ],
+                        commands: [
+                            "clasp push - sube código local a Google",
+                            "clasp pull - descarga código de Google",
+                            "clasp open - abre proyecto en navegador",
+                            "clasp status - muestra diferencias"
+                        ],
+                        checkpoint: "¿Puedes editar localmente y ver cambios en Google?",
+                        resources: []
+                    },
+                    {
+                        day: 11,
+                        title: "Workflow Completo - Local → Git → Google",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/tJBKQbSDGZM",
+                        videoTitle: "Workflow profesional: Git + GitHub + Apps Script",
+                        theory: "El workflow profesional: editas local → commit a Git → push a GitHub → push a Google. Tu código vive en 2 lugares seguros.",
+                        practice: [
+                            "Crea nuevo repo GitHub 'apps-script-clasp'",
+                            "clasp create --title 'Proyecto Clasp'",
+                            "git init",
+                            "Crea .gitignore: agrega .clasprc.json (credenciales)",
+                            "git add . && git commit -m 'Proyecto inicial'",
+                            "git remote add origin [URL]",
+                            "git push -u origin main",
+                            "Edita Code.gs",
+                            "git add . && git commit -m 'Nueva función'",
+                            "clasp push (a Google)",
+                            "git push (a GitHub)",
+                            "¡Código en ambos lados!"
+                        ],
+                        commands: [
+                            "Combinación de git + clasp commands"
+                        ],
+                        checkpoint: "¿Tu código está en GitHub Y en Google Apps Script?",
+                        resources: []
+                    },
+                    {
+                        day: 12,
+                        title: "Proyecto Semana 2 - Migra Script Real",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/yZY6h6kt7WI",
+                        videoTitle: "Migrar proyecto Apps Script a desarrollo local",
+                        theory: "Toma uno de tus scripts existentes y migralo al workflow profesional.",
+                        practice: [
+                            "Elige un script tuyo que uses activamente",
+                            "Crea repo GitHub para él",
+                            "clasp clone [scriptId] (descarga script existente)",
+                            "O clasp create y copia el código",
+                            "Organiza archivos: separa funciones en módulos",
+                            "Agrega comentarios JSDoc a cada función",
+                            "git commit después de cada mejora",
+                            "clasp push para actualizar en Google",
+                            "Prueba que funciona igual",
+                            "Documenta en README el nuevo workflow"
+                        ],
+                        commands: [
+                            "clasp clone [scriptId]",
+                            "Todos los comandos aprendidos"
+                        ],
+                        checkpoint: "¿Tienes un script real migrando con clasp + Git?",
+                        resources: []
+                    }
+                ]
+            },
+            week3: {
+                title: "Semana 3: CI/CD Básico + Tests Automáticos",
+                goal: "Automatizar validaciones antes de deploy",
+                days: [
+                    {
+                        day: 13,
+                        title: "¿Qué es CI/CD? - Automatización Básica",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/sIhm4YOMK6Q",
+                        videoTitle: "CI/CD explicado - Integración y Deploy Continuo",
+                        theory: "CI/CD = cada vez que haces push, se ejecutan pruebas automáticas. Si pasan, se deploya. Si fallan, se detiene. ¡No más bugs en producción!",
+                        practice: [
+                            "Entiende el concepto: push → tests → deploy",
+                            "GitHub Actions es GRATIS (2000 min/mes)",
+                            "En tu repo, crea carpeta .github/workflows",
+                            "Crea archivo test.yml",
+                            "Copia workflow básico (te doy template abajo)",
+                            "git add . && git commit -m 'Agregado CI'",
+                            "git push",
+                            "Ve a GitHub → tab Actions",
+                            "¡Tu primer workflow ejecutándose!"
+                        ],
+                        commands: [
+                            "mkdir -p .github/workflows",
+                            "Workflow se ejecuta automáticamente"
+                        ],
+                        checkpoint: "¿Ves tu workflow ejecutándose en GitHub Actions?",
+                        resources: ["https://docs.github.com/actions"]
+                    },
+                    {
+                        day: 14,
+                        title: "GitHub Actions - Tu Primer Workflow",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/sIhm4YOMK6Q",
+                        videoTitle: "GitHub Actions desde cero - Automatiza tu workflow",
+                        theory: "Workflows son recetas: 'cuando pase X, ejecuta Y'. Ejemplo: 'cuando hagan push, ejecuta tests'.",
+                        practice: [
+                            "Edita .github/workflows/test.yml",
+                            "Define trigger: on: [push]",
+                            "Define job: runs-on: ubuntu-latest",
+                            "Steps: checkout código, instala node, ejecuta tests",
+                            "Por ahora, test simple: echo 'Tests pasaron'",
+                            "git push",
+                            "Ve Actions - debe pasar en verde",
+                            "Rompe algo a propósito (exit 1)",
+                            "git push - ahora falla en rojo",
+                            "Arregla, push - verde de nuevo"
+                        ],
+                        commands: [
+                            "Los workflows se ejecutan solos",
+                            "Solo haces git push"
+                        ],
+                        checkpoint: "¿Tu workflow pasa/falla según el código?",
+                        resources: []
+                    },
+                    {
+                        day: 15,
+                        title: "Linting - Valida Estilo de Código",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/st670JY6OJs",
+                        videoTitle: "ESLint - Linter para JavaScript explicado",
+                        theory: "Linter = revisa que tu código siga reglas de estilo. ESLint es el estándar para JavaScript. Detecta errores antes de ejecutar.",
+                        practice: [
+                            "npm install --save-dev eslint",
+                            "npx eslint --init (responde preguntas básicas)",
+                            "Crea .eslintrc.json con reglas básicas",
+                            "npx eslint Code.gs (revisa tu archivo)",
+                            "Corrige los errores que encuentre",
+                            "Agrega script en package.json: 'lint': 'eslint *.gs'",
+                            "npm run lint (ejecuta linter)",
+                            "Agrega a workflow: npm run lint",
+                            "git push - si hay errores de estilo, CI falla"
+                        ],
+                        commands: [
+                            "npm install --save-dev eslint",
+                            "npx eslint --init",
+                            "npm run lint"
+                        ],
+                        checkpoint: "¿ESLint detecta errores en tu código?",
+                        resources: []
+                    },
+                    {
+                        day: 16,
+                        title: "Tests Básicos - Valida Lógica",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/FgnxcUQ5vho",
+                        videoTitle: "Testing en JavaScript - Conceptos básicos",
+                        theory: "Tests prueban que tus funciones hacen lo esperado. Si cambias código y tests pasan, todo está bien. Si fallan, rompiste algo.",
+                        practice: [
+                            "Para Apps Script, tests pueden ser funciones que validen",
+                            "Crea archivo Tests.gs",
+                            "function testSumar() { if(sumar(2,2) !== 4) throw 'Error' }",
+                            "Ejecuta en Apps Script - si pasa, bien",
+                            "Automatiza: crea script que ejecute tests",
+                            "Documenta qué prueba cada test",
+                            "Workflow puede ejecutar clasp run testSumar",
+                            "Cada función nueva = agregar test"
+                        ],
+                        commands: [
+                            "clasp run [función]",
+                            "Tests dentro de Apps Script"
+                        ],
+                        checkpoint: "¿Tienes al menos 3 tests funcionando?",
+                        resources: []
+                    },
+                    {
+                        day: 17,
+                        title: "Deploy Automático con clasp",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/VTbUUJiEDfY",
+                        videoTitle: "Automatizar deploy de Apps Script con GitHub Actions",
+                        theory: "Deploy automático: si tests pasan, el código se sube a Google automáticamente. ¡Cero intervención manual!",
+                        practice: [
+                            "En workflow, agrega step de clasp",
+                            "Necesitas credentials en GitHub Secrets",
+                            "clasp login --creds creds.json (genera credenciales)",
+                            "Copia contenido de .clasprc.json",
+                            "GitHub → Settings → Secrets → New secret",
+                            "Nombre: CLASP_CREDENTIALS, valor: tu JSON",
+                            "Workflow: echo credentials → clasp push",
+                            "git push → tests → clasp push automático",
+                            "¡Deploy sin tocar Google!"
+                        ],
+                        commands: [
+                            "clasp login --creds creds.json",
+                            "GitHub secrets desde interfaz web"
+                        ],
+                        checkpoint: "¿Tu código se deploya solo cuando haces push?",
+                        resources: []
+                    },
+                    {
+                        day: 18,
+                        title: "Proyecto Semana 3 - Pipeline Completo",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/FX322RVNGj4",
+                        videoTitle: "CI/CD Pipeline completo - Proyecto real",
+                        theory: "Construye pipeline completo: push → lint → tests → deploy.",
+                        practice: [
+                            "Toma tu script real de semana 2",
+                            "Agrega ESLint configurado",
+                            "Crea 5+ tests para funciones principales",
+                            "Workflow que ejecute: lint → tests → clasp push",
+                            "Prueba rompiendo algo - CI debe fallar",
+                            "Prueba arreglando - CI debe pasar y deployar",
+                            "Documenta pipeline en README",
+                            "Agrega badge de GitHub Actions al README",
+                            "¡Tienes proyecto auto-mantenible!"
+                        ],
+                        commands: [
+                            "Todo integrado en workflow"
+                        ],
+                        checkpoint: "¿Tu proyecto se valida y deploya automáticamente?",
+                        resources: []
+                    }
+                ]
+            },
+            week4: {
+                title: "Semana 4: Prompting Avanzado + Mantenimiento con IA",
+                goal: "Estructura código para que IA lo entienda y mantenga",
+                days: [
+                    {
+                        day: 19,
+                        title: "Arquitectura Documentada - Single Source of Truth",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/x6FLMoqZ14o",
+                        videoTitle: "Documentación de código - Mejores prácticas",
+                        theory: "ARCHITECTURE.md es la biblia de tu proyecto. La IA SIEMPRE lee esto primero. Define reglas inquebrantables.",
+                        practice: [
+                            "Crea ARCHITECTURE.md en raíz del proyecto",
+                            "Secciones: Overview, Estructura, Reglas, Patrones",
+                            "Define naming conventions: prefijos, sufijos",
+                            "Define estructura de carpetas obligatoria",
+                            "Lista funciones core que NO se modifican",
+                            "Documenta dependencias entre módulos",
+                            "Reglas de estilo de código",
+                            "Ejemplos de código correcto vs incorrecto",
+                            "git commit 'Arquitectura documentada'"
+                        ],
+                        commands: [
+                            "Archivo markdown de texto"
+                        ],
+                        checkpoint: "¿Alguien nuevo puede entender tu proyecto leyendo ARCHITECTURE.md?",
+                        resources: []
+                    },
+                    {
+                        day: 20,
+                        title: "JSDoc Avanzado - Código Auto-Explicativo",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/YK-GurROGIg",
+                        videoTitle: "JSDoc - Documenta tu código JavaScript",
+                        theory: "JSDoc bien hecho = la IA entiende QUÉ hace cada función, QUÉ parámetros recibe, QUÉ retorna. ¡No tiene que adivinar!",
+                        practice: [
+                            "Cada función debe tener JSDoc completo",
+                            "/** @description Qué hace */",
+                            "/** @param {tipo} nombre - Descripción */",
+                            "/** @returns {tipo} Qué retorna */",
+                            "/** @example Ejemplo de uso */",
+                            "Agrega @throws si puede lanzar errores",
+                            "Agrega @deprecated si está obsoleta",
+                            "Documenta side effects (modifica Sheet, envía email)",
+                            "ESLint puede validar JSDoc completo"
+                        ],
+                        commands: [
+                            "Comentarios en código"
+                        ],
+                        checkpoint: "¿Todas tus funciones tienen JSDoc completo?",
+                        resources: []
+                    },
+                    {
+                        day: 21,
+                        title: "Prompts Templates - Mantén Contexto",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/jC4v5AS4RIM",
+                        videoTitle: "Prompt Engineering - Cómo hablar con IA efectivamente",
+                        theory: "Templates de prompts = instruye a la IA consistentemente. Evita que 'se pierda' el contexto entre conversaciones.",
+                        practice: [
+                            "Crea carpeta .ai-prompts/",
+                            "Template: new-feature.md",
+                            "Estructura: 1. Lee ARCHITECTURE.md, 2. Lee código existente, 3. Aplica regla X",
+                            "Template: bug-fix.md",
+                            "Template: refactor.md",
+                            "Cada template incluye: contexto, reglas, ejemplos",
+                            "Cuando pidas a IA algo, usa template correspondiente",
+                            "IA siempre empieza con mismo contexto",
+                            "No más 'se me olvidó la arquitectura'"
+                        ],
+                        commands: [
+                            "Archivos markdown"
+                        ],
+                        checkpoint: "¿Tienes 3+ templates de prompts listos?",
+                        resources: []
+                    },
+                    {
+                        day: 22,
+                        title: "Code Review Automático con IA",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/MXfTrJMv5YQ",
+                        videoTitle: "Code Review automatizado con IA",
+                        theory: "Cada PR puede ser revisado por IA ANTES de mergear. IA verifica: sigue arquitectura, tiene tests, JSDoc completo.",
+                        practice: [
+                            "GitHub Actions puede llamar APIs de IA",
+                            "Workflow: on pull_request",
+                            "Lee ARCHITECTURE.md",
+                            "Lee diff del PR",
+                            "Prompt: '¿Este cambio viola arquitectura?'",
+                            "Si viola, comenta en PR automáticamente",
+                            "Si pasa, aprueba automáticamente",
+                            "Implementación básica: script que valida reglas",
+                            "Más avanzado: integra Claude API"
+                        ],
+                        commands: [
+                            "GitHub Actions con API calls"
+                        ],
+                        checkpoint: "¿Tu workflow valida PRs automáticamente?",
+                        resources: []
+                    },
+                    {
+                        day: 23,
+                        title: "Mantenimiento Preventivo - IA Detecta Problemas",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/T0qAjgQFR4c",
+                        videoTitle: "Mantenimiento de código con IA - Automatización",
+                        theory: "IA puede ejecutar auditorías semanales: código duplicado, funciones sin usar, deuda técnica. Te alerta antes de que sea problema.",
+                        practice: [
+                            "Workflow programado: on schedule (cron)",
+                            "Ejecuta cada lunes a las 9am",
+                            "Script que analiza: funciones sin JSDoc",
+                            "Detecta código duplicado",
+                            "Encuentra TODO/FIXME pendientes",
+                            "Genera reporte en GitHub Issue",
+                            "Tú decides qué arreglar y cuándo",
+                            "IA sugiere refactors pero tú apruebas",
+                            "Nunca se rompe producción sin tu OK"
+                        ],
+                        commands: [
+                            "Workflow con schedule trigger"
+                        ],
+                        checkpoint: "¿Recibes reportes automáticos de código?",
+                        resources: []
+                    },
+                    {
+                        day: 24,
+                        title: "Proyecto Final - Sistema Auto-Sostenible",
+                        duration: "1h 40min",
+                        video: "https://www.youtube.com/embed/DX8nLeF_9KA",
+                        videoTitle: "Proyecto final - Sistema completo con IA",
+                        theory: "Integra todo: tu script real, completamente documentado, con CI/CD, tests, y mantenimiento con IA.",
+                        practice: [
+                            "Elige tu script más importante",
+                            "Migra a GitHub + clasp",
+                            "ARCHITECTURE.md completo",
+                            "JSDoc en todas las funciones",
+                            "Tests comprehensivos (80%+ cobertura)",
+                            "Pipeline: lint → test → deploy",
+                            "Templates de prompts para cambios futuros",
+                            "Code review automático en PRs",
+                            "Mantenimiento preventivo semanal",
+                            "README con badges y documentación",
+                            "¡Sistema que se mantiene solo!"
+                        ],
+                        commands: [
+                            "TODO lo aprendido en 4 semanas"
+                        ],
+                        checkpoint: "¿Tienes sistema completamente auto-sostenible?",
+                        resources: []
                     }
                 ]
             }
@@ -246,8 +700,18 @@
                 this.render();
             }
 
+            showManual() {
+                this.currentView = 'manual';
+                this.render();
+            }
+
+            closeManual() {
+                this.currentView = null;
+                this.render();
+            }
+
             getProgressPercent() {
-                const total = 24;
+                const total = 24; // 6 days × 4 weeks
                 const completed = Object.keys(this.progress).filter(k => this.progress[k]).length;
                 return Math.round((completed / total) * 100);
             }
@@ -255,11 +719,443 @@
             render() {
                 const app = document.getElementById('app');
                 
-                if (this.currentDay) {
+                if (this.currentView === 'manual') {
+                    app.innerHTML = this.renderManual();
+                } else if (this.currentDay) {
                     app.innerHTML = this.renderDayDetail();
                 } else {
                     app.innerHTML = this.renderOverview();
                 }
+            }
+
+            renderManual() {
+                return `
+                    <div class="slide-in">
+                        <button onclick="app.closeManual()" class="mb-4 bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-lg font-semibold text-gray-700 transition-colors">
+                            ← Volver al inicio
+                        </button>
+
+                        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-4xl mx-auto">
+                            <h1 class="text-4xl font-bold text-indigo-900 mb-2 text-center">📘 Manual de Instalación de Git</h1>
+                            <p class="text-center text-gray-600 mb-2">Guía paso a paso con capturas de pantalla</p>
+                            <p class="text-center text-sm text-gray-500 mb-8">Versión del Manual: Para Git 2.52.0 (Enero 2025)</p>
+
+                            <!-- Table of Contents -->
+                            <div class="bg-indigo-50 rounded-lg p-6 mb-8">
+                                <h2 class="font-bold text-indigo-900 mb-3 text-xl">📑 Índice</h2>
+                                <ol class="text-indigo-800 space-y-1">
+                                    <li>1. Antes de Empezar (Prerequisitos)</li>
+                                    <li>2. Glosario de Términos</li>
+                                    <li>3. ¿Qué es Git?</li>
+                                    <li>4. Requisitos Técnicos</li>
+                                    <li>5. Pasos de Instalación</li>
+                                    <li>6. Configuración Inicial</li>
+                                    <li>7. Troubleshooting</li>
+                                    <li>8. Próximos Pasos</li>
+                                </ol>
+                            </div>
+
+                            <!-- BEFORE YOU START -->
+                            <div class="bg-red-50 border-l-4 border-red-500 rounded-lg p-6 mb-8">
+                                <h2 class="font-bold text-red-900 mb-4 text-xl">🚨 ANTES DE EMPEZAR - Lee Esto Primero</h2>
+                                
+                                <h3 class="font-bold text-red-800 mb-2">¿Necesito saber programar?</h3>
+                                <p class="text-red-900 mb-4">
+                                    <strong>NO necesitas ser programador</strong>, pero SÍ necesitas:<br/>
+                                    • Saber usar una computadora (abrir programas, crear carpetas, etc.)<br/>
+                                    • Estar cómodo siguiendo instrucciones paso a paso<br/>
+                                    • Tener paciencia para aprender conceptos nuevos<br/>
+                                    • NO tener miedo de la "pantalla negra" (terminal/consola)
+                                </p>
+
+                                <h3 class="font-bold text-red-800 mb-2">¿Qué viene incluido con Git?</h3>
+                                <p class="text-green-900 bg-green-100 p-3 rounded mb-4">
+                                    <strong>Git Bash</strong> se instala AUTOMÁTICAMENTE con Git. NO necesitas instalarlo por separado. 
+                                    Git Bash es una terminal especial para usar Git en Windows.
+                                </p>
+
+                                <h3 class="font-bold text-red-800 mb-2">¿Necesito Visual Studio Code?</h3>
+                                <p class="text-red-900 mb-4">
+                                    <strong>NO es obligatorio</strong> para empezar. Opciones:<br/>
+                                    • <strong>Notepad</strong> (viene con Windows) - Funciona perfectamente para empezar<br/>
+                                    • <strong>Visual Studio Code</strong> (recomendado para después) - Editor profesional<br/><br/>
+                                    Puedes empezar con Notepad y cambiar a VS Code cuando quieras.
+                                </p>
+
+                                <h3 class="font-bold text-red-800 mb-2">⚠️ IMPORTANTE - Sobre las Versiones</h3>
+                                <p class="text-red-900">
+                                    Este manual está hecho para <strong>Git 2.52.0</strong> (Enero 2025).<br/>
+                                    Si instalas una versión más nueva:<br/>
+                                    • Las pantallas pueden verse DIFERENTES<br/>
+                                    • Pueden aparecer nuevas opciones<br/>
+                                    • Los CONCEPTOS siguen siendo los mismos<br/>
+                                    • <strong>Regla de oro:</strong> Siempre elige opciones "recomendadas" o "por defecto"
+                                </p>
+                            </div>
+
+                            <!-- GLOSSARY -->
+                            <div class="bg-purple-50 border-l-4 border-purple-500 rounded-lg p-6 mb-8">
+                                <h2 class="font-bold text-purple-900 mb-4 text-xl">📖 Glosario de Términos</h2>
+                                <p class="text-purple-800 mb-3">Vocabulario básico que necesitas conocer:</p>
+                                <div class="space-y-2 text-sm">
+                                    <p class="text-purple-900"><strong>Git:</strong> Herramienta para guardar versiones de tu código (funciona en tu computadora, sin internet)</p>
+                                    <p class="text-purple-900"><strong>GitHub:</strong> Sitio web en la nube para almacenar y compartir código (requiere internet)</p>
+                                    <p class="text-purple-900"><strong>Git Bash:</strong> Terminal/consola especial que viene CON Git (no se instala por separado)</p>
+                                    <p class="text-purple-900"><strong>Terminal/Consola:</strong> Ventana negra donde escribes comandos con el teclado</p>
+                                    <p class="text-purple-900"><strong>Command Prompt (CMD):</strong> Terminal de Windows (alternativa a Git Bash)</p>
+                                    <p class="text-purple-900"><strong>PowerShell:</strong> Otra terminal de Windows (más moderna que CMD)</p>
+                                    <p class="text-purple-900"><strong>Editor:</strong> Programa para escribir y editar código (Notepad, VS Code, etc.)</p>
+                                    <p class="text-purple-900"><strong>Visual Studio Code (VS Code):</strong> Editor de código profesional (opcional, no obligatorio)</p>
+                                    <p class="text-purple-900"><strong>PATH:</strong> Lista de lugares donde Windows busca programas</p>
+                                    <p class="text-purple-900"><strong>Repositorio (repo):</strong> Carpeta con tu proyecto y su historial de versiones</p>
+                                    <p class="text-purple-900"><strong>Commit:</strong> Guardar una "foto" de tu código en un momento específico</p>
+                                    <p class="text-purple-900"><strong>Push:</strong> Subir tu código de tu computadora a GitHub</p>
+                                    <p class="text-purple-900"><strong>Pull:</strong> Descargar código de GitHub a tu computadora</p>
+                                    <p class="text-purple-900"><strong>Branch (rama):</strong> Copia temporal de tu código para experimentar</p>
+                                    <p class="text-purple-900"><strong>Prompt Engineering:</strong> Arte de hablarle bien a una IA para que te ayude</p>
+                                    <p class="text-purple-900"><strong>Copilot/Claude/ChatGPT:</strong> IAs que ayudan a programar (asistentes virtuales)</p>
+                                </div>
+                            </div>
+
+                            <!-- Introduction -->
+                            <div class="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-6 mb-8">
+                                <h2 class="font-bold text-blue-900 mb-3 text-xl">¿Qué es Git?</h2>
+                                <p class="text-blue-800 mb-4">
+                                    Git es una herramienta de control de versiones que te permite guardar "fotos" de tu código. 
+                                    Cada vez que algo funciona bien, guardas una versión. Si algo se rompe después, puedes volver atrás fácilmente.
+                                </p>
+                                <h3 class="font-bold text-blue-900 mb-2">Git vs GitHub - La diferencia clave</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-blue-100 p-4 rounded">
+                                        <h4 class="font-bold text-blue-900 mb-2">Git (Local)</h4>
+                                        <p class="text-blue-800 text-sm">
+                                            • Herramienta en tu computadora<br/>
+                                            • Funciona sin internet<br/>
+                                            • Guarda versiones localmente<br/>
+                                            • Como un "álbum de fotos"
+                                        </p>
+                                    </div>
+                                    <div class="bg-blue-100 p-4 rounded">
+                                        <h4 class="font-bold text-blue-900 mb-2">GitHub (Nube)</h4>
+                                        <p class="text-blue-800 text-sm">
+                                            • Servicio web (requiere internet)<br/>
+                                            • Almacena en la nube<br/>
+                                            • Colaboración con otros<br/>
+                                            • Como "Google Fotos" para código
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Technical Requirements -->
+                            <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded-lg p-6 mb-8">
+                                <h2 class="font-bold text-yellow-900 mb-4 text-xl">💻 Requisitos Técnicos</h2>
+                                
+                                <h3 class="font-bold text-yellow-800 mb-2">Hardware Mínimo:</h3>
+                                <ul class="text-yellow-900 mb-4 space-y-1 text-sm">
+                                    <li>• Windows 7 o superior (recomendado Windows 10/11)</li>
+                                    <li>• 2 GB de RAM mínimo (4 GB recomendado)</li>
+                                    <li>• 500 MB de espacio en disco</li>
+                                    <li>• Procesador de 64 bits</li>
+                                </ul>
+
+                                <h3 class="font-bold text-yellow-800 mb-2">Software Necesario:</h3>
+                                <ul class="text-yellow-900 mb-4 space-y-1 text-sm">
+                                    <li>✓ <strong>Git</strong> - Lo vas a instalar con este manual</li>
+                                    <li>✓ <strong>Notepad</strong> - Viene con Windows (suficiente)</li>
+                                    <li>○ <strong>Visual Studio Code</strong> - Opcional, recomendado para después</li>
+                                    <li>✓ <strong>Navegador web</strong> - Para acceder a GitHub</li>
+                                </ul>
+
+                                <h3 class="font-bold text-yellow-800 mb-2">Conexión a Internet:</h3>
+                                <ul class="text-yellow-900 mb-4 space-y-1 text-sm">
+                                    <li>• Para descargar Git: necesitas internet</li>
+                                    <li>• Para usar Git localmente: NO necesitas internet</li>
+                                    <li>• Para usar GitHub: SÍ necesitas internet</li>
+                                    <li>• Velocidad recomendada: 5 Mbps o superior</li>
+                                </ul>
+
+                                <h3 class="font-bold text-yellow-800 mb-2">Conocimientos Previos:</h3>
+                                <ul class="text-yellow-900 space-y-1 text-sm">
+                                    <li>✅ Usar computadora (abrir programas, crear carpetas)</li>
+                                    <li>✅ Navegar por internet</li>
+                                    <li>✅ Instalar programas en Windows</li>
+                                    <li>✅ Seguir instrucciones paso a paso</li>
+                                    <li>❌ NO necesitas saber programar</li>
+                                    <li>❌ NO necesitas experiencia con terminales</li>
+                                </ul>
+                            </div>
+
+                            <!-- Installation Steps (simplified for space) -->
+                            <h2 class="text-2xl font-bold text-gray-900 mb-6">🔧 Pasos de Instalación</h2>
+
+                            <!-- Step 1 -->
+                            <div class="mb-8 bg-gray-50 rounded-lg p-6">
+                                <h3 class="font-bold text-indigo-600 text-lg mb-3">✅ Paso 1: Inicio de Instalación</h3>
+                                <ul class="text-gray-700 mb-4 space-y-2">
+                                    <li>• Click en <strong>Next</strong> para continuar</li>
+                                    <li>• Lee la licencia GNU GPL (es software libre y gratuito)</li>
+                                </ul>
+                                <div class="bg-white p-4 rounded border">
+                                    <p class="text-sm text-gray-600 italic">Pantalla de licencia GNU GPL</p>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="mb-8 bg-gray-50 rounded-lg p-6">
+                                <h3 class="font-bold text-indigo-600 text-lg mb-3">✅ Paso 2: Elegir Editor</h3>
+                                <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                                    <p class="text-green-900 font-semibold mb-2">Opción Recomendada: Use Notepad as Git's default editor</p>
+                                    <ul class="text-green-800 space-y-1 text-sm">
+                                        <li>• Notepad es simple y viene con Windows</li>
+                                        <li>• Si tienes Visual Studio Code instalado, también es excelente</li>
+                                        <li>⚠️ <strong>NO uses Vim</strong> - es muy complicado para principiantes</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="mb-8 bg-gray-50 rounded-lg p-6">
+                                <h3 class="font-bold text-indigo-600 text-lg mb-3">✅ Paso 3: Nombre de Rama Inicial</h3>
+                                <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                                    <p class="text-green-900 font-semibold mb-2">Opción Recomendada: Let Git decide</p>
+                                    <ul class="text-green-800 space-y-1 text-sm">
+                                        <li>• Usa el nombre por defecto</li>
+                                        <li>• En el curso aprenderás a usar 'main' como estándar moderno</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div class="mb-8 bg-gray-50 rounded-lg p-6">
+                                <h3 class="font-bold text-indigo-600 text-lg mb-3">✅ Paso 4: Configurar PATH</h3>
+                                <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                                    <p class="text-green-900 font-semibold mb-2">Opción Recomendada: Git from the command line and also from 3rd-party software</p>
+                                    <ul class="text-green-800 space-y-1 text-sm">
+                                        <li>• Permite usar Git desde cualquier terminal</li>
+                                        <li>• Compatible con VS Code y otras herramientas</li>
+                                        <li>⚠️ <strong>NO</strong> selecciones la tercera opción (tiene WARNING)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 5 -->
+                            <div class="mb-8 bg-gray-50 rounded-lg p-6">
+                                <h3 class="font-bold text-indigo-600 text-lg mb-3">✅ Paso 5: Ejecutable SSH</h3>
+                                <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                                    <p class="text-green-900 font-semibold mb-2">Opción Recomendada: Use bundled OpenSSH</p>
+                                    <ul class="text-green-800 space-y-1 text-sm">
+                                        <li>• SSH es para conectarte de forma segura a GitHub</li>
+                                        <li>• La opción por defecto funciona perfectamente</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 6 -->
+                            <div class="mb-8 bg-gray-50 rounded-lg p-6">
+                                <h3 class="font-bold text-indigo-600 text-lg mb-3">✅ Paso 6: Biblioteca HTTPS</h3>
+                                <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                                    <p class="text-green-900 font-semibold mb-2">Opción Recomendada: Use the native Windows Secure Channel library</p>
+                                    <ul class="text-green-800 space-y-1 text-sm">
+                                        <li>• Para conexiones seguras con GitHub</li>
+                                        <li>• Funciona mejor con el sistema Windows</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 7 -->
+                            <div class="mb-8 bg-gray-50 rounded-lg p-6">
+                                <h3 class="font-bold text-indigo-600 text-lg mb-3">✅ Paso 7: Saltos de Línea</h3>
+                                <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                                    <p class="text-green-900 font-semibold mb-2">Opción Recomendada: Checkout Windows-style, commit Unix-style line endings</p>
+                                    <ul class="text-green-800 space-y-1 text-sm">
+                                        <li>• Maneja correctamente archivos de texto</li>
+                                        <li>• Compatible con GitHub y otros sistemas</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 8 -->
+                            <div class="mb-8 bg-gray-50 rounded-lg p-6">
+                                <h3 class="font-bold text-indigo-600 text-lg mb-3">✅ Paso 8: Terminal</h3>
+                                <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                                    <p class="text-green-900 font-semibold mb-2">Opción Recomendada: Use MinTTY</p>
+                                    <ul class="text-green-800 space-y-1 text-sm">
+                                        <li>• Terminal de Git Bash con mejor interfaz</li>
+                                        <li>• Más funciones que la consola de Windows</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 9 -->
+                            <div class="mb-8 bg-gray-50 rounded-lg p-6">
+                                <h3 class="font-bold text-indigo-600 text-lg mb-3">✅ Paso 9: Comportamiento de git pull</h3>
+                                <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                                    <p class="text-green-900 font-semibold mb-2">Opción Recomendada: Fast-forward or merge</p>
+                                    <ul class="text-green-800 space-y-1 text-sm">
+                                        <li>• Forma estándar de combinar cambios</li>
+                                        <li>• Aprenderás más sobre esto en el Día 11 del curso</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 10 -->
+                            <div class="mb-8 bg-gray-50 rounded-lg p-6">
+                                <h3 class="font-bold text-indigo-600 text-lg mb-3">✅ Paso 10: Credential Helper</h3>
+                                <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                                    <p class="text-green-900 font-semibold mb-2">Opción Recomendada: Git Credential Manager</p>
+                                    <ul class="text-green-800 space-y-1 text-sm">
+                                        <li>• Guarda tu usuario/contraseña de GitHub</li>
+                                        <li>• No tendrás que escribirla cada vez</li>
+                                        <li>• Muy útil y conveniente</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 11 -->
+                            <div class="mb-8 bg-gray-50 rounded-lg p-6">
+                                <h3 class="font-bold text-indigo-600 text-lg mb-3">✅ Paso 11: Opciones Extra e Instalación</h3>
+                                <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                                    <p class="text-green-900 font-semibold mb-2">Opciones Recomendadas:</p>
+                                    <ul class="text-green-800 space-y-1 text-sm">
+                                        <li>✓ Enable file system caching (mejora rendimiento)</li>
+                                        <li>☐ Enable symbolic links (déjala SIN marcar)</li>
+                                    </ul>
+                                    <p class="text-green-900 font-bold mt-3 text-lg">¡Click en INSTALL!</p>
+                                </div>
+                            </div>
+
+                            <!-- After Installation -->
+                            <div class="bg-gradient-to-r from-purple-50 to-indigo-50 border-l-4 border-purple-500 rounded-lg p-6 mb-6">
+                                <h2 class="font-bold text-purple-900 mb-4 text-xl">🎉 Configuración Inicial - Después de Instalar</h2>
+                                
+                                <h3 class="font-bold text-purple-800 mb-2">Paso 1: Verifica la Instalación</h3>
+                                <ol class="text-purple-900 mb-4 space-y-2">
+                                    <li>1. Busca <strong>Git Bash</strong> en el menú inicio de Windows</li>
+                                    <li>2. O abre <strong>Command Prompt</strong> o <strong>PowerShell</strong></li>
+                                    <li>3. Escribe: <code class="bg-gray-900 text-green-400 px-2 py-1 rounded">git --version</code></li>
+                                    <li>4. Deberías ver: <code class="bg-gray-100 px-2 py-1 rounded">git version 2.52.0</code> (o similar)</li>
+                                    <li>5. Si ves la versión, ¡Git está instalado correctamente! ✓</li>
+                                </ol>
+
+                                <h3 class="font-bold text-purple-800 mb-2">Paso 2: Configura tu Identidad (OBLIGATORIO)</h3>
+                                <p class="text-purple-900 mb-2">Git necesita saber quién eres. Ejecuta estos comandos:</p>
+                                <div class="bg-gray-900 text-green-400 p-4 rounded font-mono text-sm space-y-2 mb-3">
+                                    <div>git config --global user.name "Tu Nombre Completo"</div>
+                                    <div>git config --global user.email "tu@email.com"</div>
+                                </div>
+                                <p class="text-sm text-purple-800">⚠️ Usa tu email REAL - lo necesitarás para GitHub</p>
+
+                                <h3 class="font-bold text-purple-800 mb-2 mt-4">Paso 3: Verifica tu Configuración</h3>
+                                <p class="text-purple-900 mb-2">Ejecuta:</p>
+                                <div class="bg-gray-900 text-green-400 p-3 rounded font-mono text-sm mb-2">
+                                    git config --list
+                                </div>
+                                <p class="text-sm text-purple-800">Deberías ver tu nombre y email en la lista.</p>
+
+                                <h3 class="font-bold text-purple-800 mb-2 mt-4">Opcional: Cambiar Editor (si instalaste VS Code)</h3>
+                                <p class="text-purple-900 mb-2 text-sm">Si instalaste Visual Studio Code y quieres usarlo:</p>
+                                <ol class="text-purple-900 space-y-1 text-sm">
+                                    <li>1. Abre VS Code</li>
+                                    <li>2. Presiona <kbd class="bg-gray-200 px-2 py-1 rounded">Ctrl + Shift + P</kbd></li>
+                                    <li>3. Escribe: "Shell Command: Install code command in PATH"</li>
+                                    <li>4. Selecciónalo y presiona Enter</li>
+                                    <li>5. Cierra VS Code y Git Bash</li>
+                                    <li>6. Abre Git Bash de nuevo</li>
+                                    <li>7. Ejecuta: <code class="bg-gray-900 text-green-400 px-2 py-1 rounded text-xs">git config --global core.editor "code --wait"</code></li>
+                                </ol>
+                            </div>
+
+                            <!-- Troubleshooting -->
+                            <div class="bg-orange-50 border-l-4 border-orange-500 rounded-lg p-6 mb-6">
+                                <h2 class="font-bold text-orange-900 mb-4 text-xl">🔧 Troubleshooting - Solución de Problemas</h2>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <h3 class="font-bold text-orange-800 mb-2">Problema: "git" no es reconocido como comando</h3>
+                                        <p class="text-orange-900 text-sm">
+                                            <strong>Solución:</strong><br/>
+                                            1. Cierra y abre la terminal de nuevo<br/>
+                                            2. Si no funciona, reinicia tu computadora<br/>
+                                            3. Si persiste, reinstala Git y asegúrate de seleccionar "Git from command line..."
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="font-bold text-orange-800 mb-2">Problema: VS Code no funciona como editor</h3>
+                                        <p class="text-orange-900 text-sm">
+                                            <strong>Solución:</strong><br/>
+                                            1. Usa Notepad temporalmente: <code class="bg-gray-900 text-green-400 px-2 py-1 rounded text-xs">git config --global core.editor notepad</code><br/>
+                                            2. Sigue los pasos de "Opcional: Cambiar Editor" arriba<br/>
+                                            3. Notepad funciona perfectamente - no es obligatorio usar VS Code
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="font-bold text-orange-800 mb-2">Problema: Las pantallas se ven diferentes</h3>
+                                        <p class="text-orange-900 text-sm">
+                                            <strong>Esto es NORMAL</strong> si instalas una versión diferente de Git.<br/>
+                                            • Los conceptos siguen siendo los mismos<br/>
+                                            • Busca opciones "recomendadas" o "por defecto"<br/>
+                                            • Si tienes duda, elige la primera opción<br/>
+                                            • Puedes cambiar configuraciones después con comandos
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="font-bold text-orange-800 mb-2">Problema: Error de "typo" en comandos</h3>
+                                        <p class="text-orange-900 text-sm mb-2">Comandos comunes mal escritos:</p>
+                                        <ul class="text-orange-900 text-sm space-y-1">
+                                            <li>• <code>confing</code> → debe ser <code class="bg-green-100 px-1">config</code></li>
+                                            <li>• <code>comit</code> → debe ser <code class="bg-green-100 px-1">commit</code></li>
+                                            <li>• <code>pul</code> → debe ser <code class="bg-green-100 px-1">pull</code></li>
+                                        </ul>
+                                        <p class="text-orange-900 text-sm mt-2">
+                                            <strong>Tip:</strong> Usa la flecha ARRIBA ↑ en la terminal para repetir el último comando y corregirlo
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="font-bold text-orange-800 mb-2">¿Dónde encontrar ayuda?</h3>
+                                        <ul class="text-orange-900 text-sm space-y-1">
+                                            <li>• Documentación oficial: <a href="https://git-scm.com/doc" target="_blank" class="text-blue-600 underline">git-scm.com/doc</a></li>
+                                            <li>• En la terminal: <code class="bg-gray-900 text-green-400 px-2 py-1 rounded text-xs">git --help</code></li>
+                                            <li>• Ayuda de un comando específico: <code class="bg-gray-900 text-green-400 px-2 py-1 rounded text-xs">git [comando] --help</code></li>
+                                            <li>• Comunidad: Stack Overflow, Reddit r/git</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Next Steps -->
+                            <div class="bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 rounded-lg p-6 mb-6">
+                                <h2 class="font-bold text-green-900 mb-3 text-xl">🚀 Próximos Pasos</h2>
+                                <ul class="text-green-800 space-y-2">
+                                    <li>✅ <strong>Git instalado correctamente</strong></li>
+                                    <li>✅ <strong>Git Bash disponible</strong> (viene con Git, búscalo en el menú inicio)</li>
+                                    <li>✅ <strong>Identidad configurada</strong> (nombre y email)</li>
+                                    <li>✅ Ya estás listo para comenzar el <strong>Día 1</strong> del curso</li>
+                                    <li>✅ Regresa al inicio de la academia</li>
+                                    <li>✅ Comienza tu capacitación de 30 días</li>
+                                </ul>
+                                <p class="text-green-900 font-bold mt-4 text-lg">¡Éxito en tu aprendizaje! 💪</p>
+                            </div>
+
+                            <!-- Essential Commands -->
+                            <div class="bg-gray-100 rounded-lg p-6">
+                                <h2 class="font-bold text-gray-900 mb-3 text-xl">📌 Comandos Esenciales para Empezar</h2>
+                                <p class="text-gray-700 mb-3">Guarda estos comandos - los usarás constantemente:</p>
+                                <div class="bg-gray-900 text-green-400 p-4 rounded font-mono text-sm space-y-2">
+                                    <div>git --version          <span class="text-gray-500"># Ver versión instalada</span></div>
+                                    <div>git config --list     <span class="text-gray-500"># Ver configuración</span></div>
+                                    <div>git config --global user.name "Nombre"  <span class="text-gray-500"># Configurar nombre</span></div>
+                                    <div>git config --global user.email "email"  <span class="text-gray-500"># Configurar email</span></div>
+                                    <div>git --help            <span class="text-gray-500"># Ver ayuda general</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
             }
 
             renderOverview() {
@@ -294,6 +1190,10 @@
                                     <div class="text-sm text-green-700">Con mantenimiento de IA</div>
                                 </div>
                             </div>
+
+                            <button onclick="app.showManual()" class="w-full bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg transition-all transform hover:scale-105 mb-6">
+                                📘 Manual de Instalación de Git (Paso a Paso)
+                            </button>
                         </div>
 
                         ${Object.entries(curriculum).map(([weekKey, week]) => this.renderWeek(weekKey, week)).join('')}
@@ -383,6 +1283,28 @@
                                 </button>
                             </div>
 
+                            ${day.video ? `
+                                <div class="bg-gradient-to-r from-red-50 to-pink-50 border-l-4 border-red-500 rounded-lg p-6 mb-6">
+                                    <h2 class="font-bold text-red-900 mb-3 flex items-center">
+                                        <span class="text-2xl mr-2">🎥</span>
+                                        Video Tutorial: ${day.videoTitle}
+                                    </h2>
+                                    <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                                        <iframe 
+                                            src="${day.video}" 
+                                            frameborder="0" 
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowfullscreen
+                                            class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+                                            style="width: 100%; height: 100%;">
+                                        </iframe>
+                                    </div>
+                                    <p class="text-sm text-red-700 mt-3">
+                                        💡 <strong>Tip:</strong> Ve el video primero para entender el concepto, luego practica con los ejercicios de abajo.
+                                    </p>
+                                </div>
+                            ` : ''}
+
                             <div class="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-6 mb-6">
                                 <h2 class="font-bold text-blue-900 mb-2">🧠 Teoría</h2>
                                 <p class="text-blue-800">${day.theory}</p>
@@ -436,3 +1358,4 @@
     </script>
 </body>
 </html>
+`;

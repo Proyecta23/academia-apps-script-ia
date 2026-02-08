@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 5 - Pull Requests: Guía Visual Interactiva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .step-card { animation: fadeIn 0.5s ease-out; }
+        .step-card:hover { transform: translateY(-4px); transition: all 0.3s; }
+        .correct { background-color: #d1fae5; border-color: #10b981; }
+        .incorrect { background-color: #fee2e2; border-color: #ef4444; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 min-h-screen p-8">
+    <div class="max-w-6xl mx-auto">
+        
+        <!-- Header -->
+        <div class="bg-white rounded-2xl shadow-2xl p-8 mb-8">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h1 class="text-4xl font-bold text-indigo-900 mb-2">🔀 Día 5: Pull Requests</h1>
+                    <p class="text-xl text-gray-600">El Taller de Experimentos - Guía Visual Interactiva</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm text-gray-500">Academia Apps Script + IA</div>
+                    <div class="text-lg font-semibold text-indigo-600">Semana 1 • 1h 40min</div>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-6 text-white">
+                <h2 class="text-2xl font-bold mb-2">🎯 Lo que aprenderás hoy</h2>
+                <p class="text-lg opacity-90">Pull Request = Experimento en taller → Revisar → Si funciona → Pasar a producción. Main NUNCA se rompe porque pruebas ANTES de mergear.</p>
+            </div>
+        </div>
+
+        <!-- VIDEO EXPLICATIVO -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">🎥 Video Explicativo</h2>
+            <div class="bg-gray-100 rounded-xl p-8 text-center">
+                <div class="aspect-video bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
+                    <div class="text-center">
+                        <svg class="w-24 h-24 mx-auto text-gray-400 mb-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
+                        </svg>
+                        <p class="text-gray-600 font-semibold">📹 Próximamente: Video tutorial completo</p>
+                        <p class="text-sm text-gray-500 mt-2">Aquí irá el video explicando el flujo completo de Pull Requests</p>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-600">
+                    💡 <strong>Nota:</strong> Reemplaza este bloque con tu video de YouTube/Loom usando un iframe
+                </p>
+            </div>
+        </div>
+
+        <!-- RECURSOS DESCARGABLES -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">📚 Recursos Descargables</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="https://drive.google.com/drive/folders/TU_CARPETA_AQUI" target="_blank" 
+                   class="bg-gradient-to-r from-blue-50 to-blue-100 border-2 border-blue-300 rounded-xl p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-center gap-4">
+                        <div class="text-5xl">📁</div>
+                        <div>
+                            <h3 class="font-bold text-blue-900 text-lg">Carpeta Google Drive</h3>
+                            <p class="text-blue-700 text-sm">PDFs, cheatsheets y diagramas para imprimir</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="bg-gradient-to-r from-green-50 to-green-100 border-2 border-green-300 rounded-xl p-6">
+                    <div class="flex items-center gap-4">
+                        <div class="text-5xl">📄</div>
+                        <div>
+                            <h3 class="font-bold text-green-900 text-lg">Recursos incluidos:</h3>
+                            <ul class="text-green-700 text-sm space-y-1 mt-2">
+                                <li>• Cheatsheet de comandos Git</li>
+                                <li>• Diagrama de flujo PR</li>
+                                <li>• Guía de navegación GitHub</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Concepto Principal -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">💡 El Concepto Clave</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border-2 border-blue-300">
+                    <div class="text-4xl mb-3">🏠</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Main = Producción</h3>
+                    <p class="text-blue-800">Tu código que FUNCIONA. Sagrado. Nunca se rompe.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border-2 border-purple-300">
+                    <div class="text-4xl mb-3">🔨</div>
+                    <h3 class="text-xl font-bold text-purple-900 mb-2">Rama = Taller</h3>
+                    <p class="text-purple-800">Experimentos. Si sale mal, lo borras. Main sigue intacto.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border-2 border-green-300">
+                    <div class="text-4xl mb-3">✅</div>
+                    <h3 class="text-xl font-bold text-green-900 mb-2">PR = Revisión</h3>
+                    <p class="text-green-800">"¿Apruebas estos cambios?" Solo lo bueno pasa a main.</p>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+                <p class="text-yellow-900 font-semibold">🔑 Regla de Oro: Main siempre funciona porque NUNCA editas ahí directamente. Siempre: rama → prueba → PR → merge.</p>
+            </div>
+        </div>
+
+        <!-- TU EXPERIENCIA REAL -->
+        <div class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl shadow-xl p-8 mb-8 border-2 border-pink-300">
+            <h2 class="text-3xl font-bold text-pink-900 mb-6">🎓 Tu Experiencia Real (Aprendizaje Basado en Práctica)</h2>
+            
+            <div class="space-y-6">
+                <div class="bg-white rounded-lg p-6 shadow">
+                    <h3 class="font-bold text-pink-900 text-xl mb-3">📝 Lo que hiciste:</h3>
+                    <ol class="space-y-3 text-pink-800">
+                        <li class="flex items-start gap-3">
+                            <span class="bg-pink-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">1</span>
+                            <span>Creaste repo "repaso-git" localmente con git init</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-pink-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">2</span>
+                            <span>Hiciste varios commits (función saludar, despedirse, multiplicar)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-pink-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">3</span>
+                            <span>Subiste a GitHub con git push -u origin main</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-pink-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">4</span>
+                            <span>Creaste rama "mejora-comentarios" EN GITHUB (web)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-pink-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">5</span>
+                            <span>Editaste Code.gs DIRECTAMENTE en GitHub (agregaste JSDoc)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-pink-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">6</span>
+                            <span>Creaste tu primer PR (#1) con descripción completa</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-pink-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">7</span>
+                            <span>Mergeaste a main y BORRASTE la rama</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-pink-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">8</span>
+                            <span>Hiciste git pull para sincronizar local con GitHub</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow">
+                    <h3 class="font-bold text-pink-900 text-xl mb-3">💡 Dudas que resolviste:</h3>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-amber-500 bg-amber-50 p-4 rounded">
+                            <p class="font-bold text-amber-900">❓ "¿Por qué 'nueva-funcion' está en mi local pero NO en GitHub?"</p>
+                            <p class="text-amber-800 mt-2"><strong>Aprendiste:</strong> Crear rama en local NO la sube automáticamente. Necesitas: <code class="bg-white px-2 py-1 rounded">git push origin nueva-funcion</code></p>
+                        </div>
+
+                        <div class="border-l-4 border-amber-500 bg-amber-50 p-4 rounded">
+                            <p class="font-bold text-amber-900">❓ "¿Por qué 'mejora-comentarios' NO está en mi local?"</p>
+                            <p class="text-amber-800 mt-2"><strong>Aprendiste:</strong> La creaste EN GITHUB, nunca la bajaste. Ramas en GitHub ≠ Ramas en local.</p>
+                        </div>
+
+                        <div class="border-l-4 border-amber-500 bg-amber-50 p-4 rounded">
+                            <p class="font-bold text-amber-900">❓ "¿Cómo navego en GitHub? ¿Dónde están las ramas?"</p>
+                            <p class="text-amber-800 mt-2"><strong>Aprendiste:</strong> Dropdown "main" → cambia de rama. Insights → Network = gráfico visual de TODO.</p>
+                        </div>
+
+                        <div class="border-l-4 border-amber-500 bg-amber-50 p-4 rounded">
+                            <p class="font-bold text-amber-900">❓ "¿git add crea archivos?"</p>
+                            <p class="text-amber-800 mt-2"><strong>Aprendiste:</strong> NO. <code>code archivo.html</code> crea el archivo. <code>git add</code> solo lo prepara para commit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EJERCICIOS INTERACTIVOS -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">🎮 Ejercicios Interactivos</h2>
+            
+            <!-- Ejercicio 1: Quiz -->
+            <div class="mb-8 bg-blue-50 rounded-xl p-6 border-2 border-blue-300">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4">📝 Ejercicio 1: Quiz de Conceptos</h3>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg p-4">
+                        <p class="font-bold text-gray-900 mb-3">1. ¿Qué comando sube una rama local a GitHub?</p>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-3 border-2 rounded hover:bg-gray-50 transition">
+                                A) git branch origin [rama]
+                            </button>
+                            <button onclick="checkAnswer(this, true)" class="w-full text-left p-3 border-2 rounded hover:bg-gray-50 transition">
+                                B) git push origin [rama]
+                            </button>
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-3 border-2 rounded hover:bg-gray-50 transition">
+                                C) git add origin [rama]
+                            </button>
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-3 border-2 rounded hover:bg-gray-50 transition">
+                                D) git merge origin [rama]
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4">
+                        <p class="font-bold text-gray-900 mb-3">2. ¿Dónde vive la rama "mejora-comentarios" después de crearla EN GITHUB?</p>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-3 border-2 rounded hover:bg-gray-50 transition">
+                                A) Solo en mi computadora local
+                            </button>
+                            <button onclick="checkAnswer(this, true)" class="w-full text-left p-3 border-2 rounded hover:bg-gray-50 transition">
+                                B) Solo en GitHub (hasta que hagas git pull)
+                            </button>
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-3 border-2 rounded hover:bg-gray-50 transition">
+                                C) En ambos lugares automáticamente
+                            </button>
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-3 border-2 rounded hover:bg-gray-50 transition">
+                                D) En ningún lugar, solo en memoria
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg p-4">
+                        <p class="font-bold text-gray-900 mb-3">3. ¿Qué hace "git pull"?</p>
+                        <div class="space-y-2">
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-3 border-2 rounded hover:bg-gray-50 transition">
+                                A) Sube cambios locales a GitHub
+                            </button>
+                            <button onclick="checkAnswer(this, true)" class="w-full text-left p-3 border-2 rounded hover:bg-gray-50 transition">
+                                B) Baja cambios de GitHub a local
+                            </button>
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-3 border-2 rounded hover:bg-gray-50 transition">
+                                C) Crea una rama nueva
+                            </button>
+                            <button onclick="checkAnswer(this, false)" class="w-full text-left p-3 border-2 rounded hover:bg-gray-50 transition">
+                                D) Borra un archivo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 2: Ordenar Pasos -->
+            <div class="mb-8 bg-green-50 rounded-xl p-6 border-2 border-green-300">
+                <h3 class="text-2xl font-bold text-green-900 mb-4">🔄 Ejercicio 2: Ordena el Flujo de PR</h3>
+                <p class="text-green-800 mb-4">Arrastra los pasos en el orden correcto:</p>
+                <div id="sortable-steps" class="space-y-2">
+                    <div draggable="true" class="bg-white p-4 rounded border-2 cursor-move hover:shadow-md transition" data-order="4">
+                        📝 Merge Pull Request a main
+                    </div>
+                    <div draggable="true" class="bg-white p-4 rounded border-2 cursor-move hover:shadow-md transition" data-order="1">
+                        🌿 Crear rama en GitHub
+                    </div>
+                    <div draggable="true" class="bg-white p-4 rounded border-2 cursor-move hover:shadow-md transition" data-order="5">
+                        🗑️ Delete branch en GitHub
+                    </div>
+                    <div draggable="true" class="bg-white p-4 rounded border-2 cursor-move hover:shadow-md transition" data-order="2">
+                        ✏️ Editar archivos en la rama
+                    </div>
+                    <div draggable="true" class="bg-white p-4 rounded border-2 cursor-move hover:shadow-md transition" data-order="6">
+                        🔄 git pull (sincronizar local)
+                    </div>
+                    <div draggable="true" class="bg-white p-4 rounded border-2 cursor-move hover:shadow-md transition" data-order="3">
+                        🔀 Crear Pull Request
+                    </div>
+                </div>
+                <button onclick="checkOrder()" class="mt-4 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition">
+                    ✓ Verificar Orden
+                </button>
+                <div id="order-result" class="mt-4"></div>
+            </div>
+
+            <!-- Ejercicio 3: Checklist -->
+            <div class="bg-purple-50 rounded-xl p-6 border-2 border-purple-300">
+                <h3 class="text-2xl font-bold text-purple-900 mb-4">✅ Ejercicio 3: Checklist de Aprendizaje</h3>
+                <p class="text-purple-800 mb-4">Marca lo que ya sabes hacer:</p>
+                <div class="space-y-3">
+                    <label class="flex items-center gap-3 bg-white p-4 rounded cursor-pointer hover:bg-purple-50 transition">
+                        <input type="checkbox" class="w-5 h-5">
+                        <span>Crear un repositorio en GitHub</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-4 rounded cursor-pointer hover:bg-purple-50 transition">
+                        <input type="checkbox" class="w-5 h-5">
+                        <span>Hacer commits con git add y git commit</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-4 rounded cursor-pointer hover:bg-purple-50 transition">
+                        <input type="checkbox" class="w-5 h-5">
+                        <span>Subir código a GitHub con git push</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-4 rounded cursor-pointer hover:bg-purple-50 transition">
+                        <input type="checkbox" class="w-5 h-5">
+                        <span>Crear una rama en GitHub desde la interfaz web</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-4 rounded cursor-pointer hover:bg-purple-50 transition">
+                        <input type="checkbox" class="w-5 h-5">
+                        <span>Editar archivos directamente en GitHub</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-4 rounded cursor-pointer hover:bg-purple-50 transition">
+                        <input type="checkbox" class="w-5 h-5">
+                        <span>Crear un Pull Request con descripción</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-4 rounded cursor-pointer hover:bg-purple-50 transition">
+                        <input type="checkbox" class="w-5 h-5">
+                        <span>Mergear un PR a main</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-4 rounded cursor-pointer hover:bg-purple-50 transition">
+                        <input type="checkbox" class="w-5 h-5">
+                        <span>Borrar ramas después del merge</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-4 rounded cursor-pointer hover:bg-purple-50 transition">
+                        <input type="checkbox" class="w-5 h-5">
+                        <span>Sincronizar local con GitHub usando git pull</span>
+                    </label>
+                    <label class="flex items-center gap-3 bg-white p-4 rounded cursor-pointer hover:bg-purple-50 transition">
+                        <input type="checkbox" class="w-5 h-5">
+                        <span>Navegar en GitHub: dropdown, PRs, Network graph</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flujo Visual Paso a Paso (contenido original) -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">🌐 El Flujo Completo Paso a Paso</h2>
+            
+            <div class="space-y-4">
+                <!-- Paso 1 -->
+                <div class="step-card bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-6 border-l-4 border-blue-500 shadow-lg">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold flex-shrink-0">1</div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Crear Rama EN GITHUB (nube)</h3>
+                            <p class="text-blue-800 mb-3">Click en dropdown "main" → Escribes "mejora-comentarios" → Create branch</p>
+                            <div class="bg-white rounded-lg p-4 border border-blue-300">
+                                <div class="font-mono text-sm space-y-1">
+                                    <div class="text-blue-600">☁️ GitHub: rama "mejora-comentarios" creada</div>
+                                    <div class="text-gray-500">💻 Local: aún NO existe (nunca la bajaste)</div>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-sm text-blue-700 bg-blue-50 p-3 rounded">
+                                💡 <strong>Importante:</strong> La rama vive SOLO en GitHub por ahora
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="step-card bg-gradient-to-r from-green-50 to-green-100 rounded-xl p-6 border-l-4 border-green-500 shadow-lg">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold flex-shrink-0">2</div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-green-900 mb-2">Editar EN GITHUB (web)</h3>
+                            <p class="text-green-800 mb-3">Asegúrate estar en rama "mejora-comentarios" → Click en Code.gs → ✏️ Edit → Agregar JSDoc</p>
+                            <div class="bg-white rounded-lg p-4 border border-green-300">
+                                <div class="font-mono text-sm space-y-1">
+                                    <div class="text-green-600">✅ Cambios SOLO en rama experimental</div>
+                                    <div class="text-green-600">✅ Main intacto (producción segura)</div>
+                                    <div class="text-gray-500">💻 Local: sigue sin cambios</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="step-card bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-xl p-6 border-l-4 border-yellow-500 shadow-lg">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-yellow-500 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold flex-shrink-0">3</div>
+                        <div class="flex-grow">
+                            <h3 class="text-xl font-bold text-yellow-900 mb-2">Crear Pull Request</h3>
+                            <p class="text-yellow-800 mb-3">Banner amarillo "Compare & pull request" → Describe cambios → Create PR</p>
+                            <div class="bg-white rounded-lg p-4 border border-yellow-300">
+                                <div class="space-y-2">
+                                    <div class="font-semibold text-yellow-900">📝 Título:</div>
+                                    <div class="font-mono text-sm bg-gray-50 p-2 rounded">"Agregar documentación JSDoc"</div>
+                                    <div class="font-semibold text-yellow-900 mt-2">📋 Descripción:</div>
+                                    <div class="text-sm bg-gray-50 p-2 rounded">
+                                        - Agregado header con información<br>
+                                        - Documentadas funciones con JSDoc<br>
+                                
