@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Apps Script + IA - 30 Días</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-in { animation: slideIn 0.4s ease-out; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div id="app" class="container mx-auto px-4 py-8 max-w-6xl"></div>
+
+    <script>
+        const curriculum = {
+            week1: {
+                title: "Semana 1: Fundamentos (Git/GitHub + Terminal)",
+                goal: "Dominar control de versiones y comandos básicos",
+                days: [
+                    {
+                        day: 1,
+                        title: "Git Básico - Tu Primera Versión",
+                        duration: "1h 40min",
+                        theory: "Git es como 'guardar versiones' de tu código. Cada vez que algo funciona, guardas un 'snapshot'. Si algo se rompe, vuelves atrás.",
+                        practice: [
+                            "Instala Git desde git-scm.com",
+                            "Configura: git config --global user.name 'TuNombre'",
+                            "Configura: git config --global user.email 'tu@email.com'",
+                            "Crea carpeta 'mi-primer-repo' y ábrela en terminal",
+                            "git init (inicializa repositorio)",
+                            "Crea archivo test.gs con código simple de Apps Script",
+                            "git add test.gs",
+                            "git commit -m 'Mi primer commit'",
+                            "git log (ve tu historial)"
+                        ],
+                        commands: [
+                            "git init",
+                            "git add .",
+                            "git commit -m 'mensaje'",
+                            "git log",
+                            "git status"
+                        ],
+                        checkpoint: "¿Puedes hacer 3 commits diferentes y ver tu historial?",
+                        resources: ["https://git-scm.com/downloads"]
+                    },
+                    {
+                        day: 2,
+                        title: "GitHub - Tu Código en la Nube",
+                        duration: "1h 40min",
+                        theory: "GitHub es como Google Drive pero para código. Tu código vive ahí, con historial completo y accesible desde cualquier lugar.",
+                        practice: [
+                            "Entra a github.com (ya tienes cuenta)",
+                            "Crea nuevo repositorio 'apps-script-practice'",
+                            "Copia el URL del repo",
+                            "En tu carpeta local: git remote add origin [URL]",
+                            "git branch -M main",
+                            "git push -u origin main",
+                            "Refresca GitHub - ¡tu código está en la nube!",
+                            "Edita test.gs, haz commit y push de nuevo"
+                        ],
+                        commands: [
+                            "git remote add origin [URL]",
+                            "git push -u origin main",
+                            "git pull",
+                            "git clone [URL]"
+                        ],
+                        checkpoint: "¿Tu código local está en GitHub y puedes hacer cambios?",
+                        resources: ["https://github.com"]
+                    },
+                    {
+                        day: 3,
+                        title: "Branches - Experimenta Sin Romper",
+                        duration: "1h 40min",
+                        theory: "Las ramas (branches) son copias temporales. Trabajas en 'dev', pruebas, y solo si funciona lo fusionas a 'main'. ¡Nunca rompes producción!",
+                        practice: [
+                            "git branch dev (crea rama de desarrollo)",
+                            "git checkout dev (cambia a esa rama)",
+                            "Edita test.gs - agrega función nueva",
+                            "git add . && git commit -m 'Nueva función'",
+                            "git checkout main (vuelve a main)",
+                            "¿Ves? tu cambio NO está aquí todavía",
+                            "git merge dev (fusiona cambios)",
+                            "Ahora SÍ está en main",
+                            "git push (sube todo a GitHub)"
+                        ],
+                        commands: [
+                            "git branch [nombre]",
+                            "git checkout [nombre]",
+                            "git merge [rama]",
+                            "git branch -d [nombre]"
+                        ],
+                        checkpoint: "¿Puedes crear rama, hacer cambios, y fusionar sin problemas?",
+                        resources: []
+                    },
+                    {
+                        day: 4,
+                        title: "Terminal Básico - Navega como Pro",
+                        duration: "1h 40min",
+                        theory: "La terminal es más rápida que clicks. 5 comandos básicos te hacen productivo.",
+                        practice: [
+                            "pwd (¿dónde estoy?)",
+                            "ls (¿qué hay aquí?)",
+                            "cd mi-carpeta (entrar a carpeta)",
+                            "cd .. (subir un nivel)",
+                            "mkdir nueva-carpeta (crear carpeta)",
+                            "touch archivo.txt (crear archivo)",
+                            "rm archivo.txt (borrar archivo)",
+                            "Práctica: navega a Desktop, crea carpeta, entra, crea archivo, bórralo"
+                        ],
+                        commands: [
+                            "pwd - muestra ruta actual",
+                            "ls - lista archivos",
+                            "cd [carpeta] - entra a carpeta",
+                            "mkdir [nombre] - crea carpeta",
+                            "touch [archivo] - crea archivo",
+                            "rm [archivo] - borra archivo"
+                        ],
+                        checkpoint: "¿Puedes navegar tu sistema sin usar el mouse?",
+                        resources: []
+                    },
+                    {
+                        day: 5,
+                        title: "Pull Requests - Código Revisado por IA",
+                        duration: "1h 40min",
+                        theory: "Pull Requests (PR) = propones cambios antes de aplicarlos. Aquí la IA puede revisar tu código antes de que rompa algo.",
+                        practice: [
+                            "En GitHub, crea rama 'feature-nueva' desde web",
+                            "Edita un archivo directamente en GitHub",
+                            "Click en 'Create Pull Request'",
+                            "Escribe descripción de qué cambiaste",
+                            "Revisa los cambios (diff)",
+                            "Merge pull request",
+                            "En local: git pull (trae los cambios)",
+                            "Practica: crea otra rama, edita, PR, merge"
+                        ],
+                        commands: [
+                            "git fetch origin",
+                            "git checkout -b [rama] origin/[rama]",
+                            "git push origin [rama]"
+                        ],
+                        checkpoint: "¿Entiendes el flujo: rama → cambios → PR → revisión → merge?",
+                        resources: []
+                    },
+                    {
+                        day: 6,
+                        title: "Proyecto Semana 1 - Repo Real de Apps Script",
+                        duration: "1h 40min",
+                        theory: "Aplica todo: crea un repo real con código de Apps Script que ya uses.",
+                        practice: [
+                            "Crea repo 'mi-apps-script-real' en GitHub",
+                            "Copia uno de tus scripts existentes",
+                            "Organiza en carpetas: /src /docs /tests",
+                            "Crea README.md explicando qué hace",
+                            "Haz commit inicial",
+                            "Crea rama 'mejoras'",
+                            "Agrega comentarios JSDoc a funciones",
+                            "PR para fusionar mejoras",
+                            "Documenta en README cómo usar el script"
+                        ],
+                        commands: [
+                            "Todo lo aprendido esta semana"
+                        ],
+                        checkpoint: "¿Tienes un repo profesional con uno de tus scripts reales?",
+                        resources: []
+                    }
+                ]
+            },
+            week2: {
+                title: "Semana 2: Node.js + clasp (Conecta Apps Script)",
+                goal: "Escribir Apps Script localmente y deployar automáticamente",
+                days: [
+                    {
+                        day: 7,
+                        title: "Node.js - El Motor que Necesitas",
+                        duration: "1h 40min",
+                        theory: "Node.js te permite ejecutar JavaScript fuera del navegador. npm es su 'tienda de herramientas'. clasp necesita Node.js para funcionar.",
+                        practice: [
+                            "Descarga Node.js desde nodejs.org (versión LTS)",
+                            "Instala (siguiente, siguiente, finalizar)",
+                            "Abre terminal nueva",
+                            "node --version (debe mostrar versión)",
+                            "npm --version (debe mostrar versión)",
+                            "Crea carpeta 'test-node'",
+                            "npm init -y (crea package.json)",
+                            "Crea archivo app.js con: console.log('Hola Node')",
+                            "node app.js (ejecuta el archivo)",
+                            "¡Acabas de ejecutar JavaScript en terminal!"
+                        ],
+                        commands: [
+                            "node --version",
+                            "npm --version",
+                            "npm init -y",
+                            "node archivo.js"
+                        ],
+                        checkpoint: "¿Node.js y npm funcionan en tu terminal?",
+                        resources: ["https://nodejs.org"]
+                    }
+                ]
+            }
+        };
+
+        class App {
+            constructor() {
+                this.progress = this.loadProgress();
+                this.currentWeek = this.getCurrentWeek();
+                this.currentDay = null;
+                this.render();
+            }
+
+            loadProgress() {
+                const saved = localStorage.getItem('appsScriptProgress');
+                return saved ? JSON.parse(saved) : {};
+            }
+
+            saveProgress() {
+                localStorage.setItem('appsScriptProgress', JSON.stringify(this.progress));
+            }
+
+            getCurrentWeek() {
+                const completed = Object.keys(this.progress).filter(k => this.progress[k]).length;
+                if (completed < 6) return 'week1';
+                if (completed < 12) return 'week2';
+                if (completed < 18) return 'week3';
+                return 'week4';
+            }
+
+            toggleDay(weekKey, dayIndex) {
+                const key = `${weekKey}_day${dayIndex}`;
+                this.progress[key] = !this.progress[key];
+                this.saveProgress();
+                this.render();
+            }
+
+            showDay(weekKey, dayIndex) {
+                this.currentDay = { week: weekKey, index: dayIndex };
+                this.render();
+            }
+
+            closeDay() {
+                this.currentDay = null;
+                this.render();
+            }
+
+            getProgressPercent() {
+                const total = 24;
+                const completed = Object.keys(this.progress).filter(k => this.progress[k]).length;
+                return Math.round((completed / total) * 100);
+            }
+
+            render() {
+                const app = document.getElementById('app');
+                
+                if (this.currentDay) {
+                    app.innerHTML = this.renderDayDetail();
+                } else {
+                    app.innerHTML = this.renderOverview();
+                }
+            }
+
+            renderOverview() {
+                const percent = this.getProgressPercent();
+                
+                return `
+                    <div class="slide-in">
+                        <div class="bg-white rounded-2xl shadow-2xl p-8 mb-8">
+                            <h1 class="text-4xl font-bold text-indigo-900 mb-2">🚀 Academia Apps Script + IA</h1>
+                            <p class="text-gray-600 mb-6">30 días para dominar mantenimiento de código con IA</p>
+                            
+                            <div class="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl p-6 text-white mb-6">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-lg font-semibold">Progreso Total</span>
+                                    <span class="text-2xl font-bold">${percent}%</span>
+                                </div>
+                                <div class="bg-white bg-opacity-30 rounded-full h-4 overflow-hidden">
+                                    <div class="bg-white h-full rounded-full transition-all duration-500" style="width: ${percent}%"></div>
+                                </div>
+                                <p class="text-sm mt-2 opacity-90">${Object.keys(this.progress).filter(k => this.progress[k]).length} de 24 días completados</p>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                <div class="bg-blue-50 rounded-lg p-4">
+                                    <div class="text-blue-600 font-semibold mb-1">⏰ Tiempo diario</div>
+                                    <div class="text-2xl font-bold text-blue-900">1h 40min</div>
+                                    <div class="text-sm text-blue-700">Lunes a Sábado</div>
+                                </div>
+                                <div class="bg-green-50 rounded-lg p-4">
+                                    <div class="text-green-600 font-semibold mb-1">🎯 Meta Final</div>
+                                    <div class="text-lg font-bold text-green-900">Código Auto-Sostenible</div>
+                                    <div class="text-sm text-green-700">Con mantenimiento de IA</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        ${Object.entries(curriculum).map(([weekKey, week]) => this.renderWeek(weekKey, week)).join('')}
+
+                        <div class="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6 mt-8">
+                            <h3 class="font-bold text-amber-900 mb-2">💡 Consejos para el éxito:</h3>
+                            <ul class="text-amber-800 space-y-1 text-sm">
+                                <li>• Practica TODOS los días (lun-sáb), la consistencia es clave</li>
+                                <li>• No avances si no completaste el ejercicio del día</li>
+                                <li>• Usa tus proyectos reales desde semana 2</li>
+                                <li>• Guarda todos los comandos que uses frecuentemente</li>
+                                <li>• Los domingos revisa lo aprendido en la semana</li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            }
+
+            renderWeek(weekKey, week) {
+                const completed = week.days.filter((_, i) => this.progress[`${weekKey}_day${i}`]).length;
+                const percent = Math.round((completed / week.days.length) * 100);
+                const isCurrent = this.currentWeek === weekKey;
+
+                return `
+                    <div class="bg-white rounded-xl shadow-lg p-6 mb-6 ${isCurrent ? 'ring-2 ring-indigo-500' : ''}">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h2 class="text-2xl font-bold text-gray-900 mb-1">${week.title}</h2>
+                                <p class="text-gray-600">${week.goal}</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-3xl font-bold ${percent === 100 ? 'text-green-600' : 'text-indigo-600'}">${percent}%</div>
+                                <div class="text-sm text-gray-500">${completed}/${week.days.length} días</div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                            ${week.days.map((day, i) => this.renderDayCard(weekKey, day, i)).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            renderDayCard(weekKey, day, index) {
+                const key = `${weekKey}_day${index}`;
+                const completed = this.progress[key];
+                
+                return `
+                    <div class="bg-gradient-to-br ${completed ? 'from-green-50 to-green-100' : 'from-gray-50 to-gray-100'} rounded-lg p-4 cursor-pointer hover:shadow-md transition-all"
+                         onclick="app.showDay('${weekKey}', ${index})">
+                        <div class="flex items-start justify-between mb-2">
+                            <div class="text-sm font-semibold ${completed ? 'text-green-700' : 'text-gray-600'}">Día ${day.day}</div>
+                            <div onclick="event.stopPropagation(); app.toggleDay('${weekKey}', ${index})" 
+                                 class="w-6 h-6 rounded border-2 ${completed ? 'bg-green-500 border-green-600' : 'border-gray-300'} flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+                                ${completed ? '<span class="text-white text-xs">✓</span>' : ''}
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-gray-900 mb-2 text-sm leading-tight">${day.title}</h3>
+                        <div class="text-xs text-gray-600">${day.duration}</div>
+                    </div>
+                `;
+            }
+
+            renderDayDetail() {
+                const { week, index } = this.currentDay;
+                const weekData = curriculum[week];
+                const day = weekData.days[index];
+                const key = `${week}_day${index}`;
+                const completed = this.progress[key];
+
+                return `
+                    <div class="slide-in">
+                        <button onclick="app.closeDay()" class="mb-4 bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-lg font-semibold text-gray-700 transition-colors">
+                            ← Volver al resumen
+                        </button>
+
+                        <div class="bg-white rounded-2xl shadow-2xl p-8">
+                            <div class="flex items-start justify-between mb-6">
+                                <div>
+                                    <div class="text-sm font-semibold text-indigo-600 mb-1">Día ${day.day} • ${day.duration}</div>
+                                    <h1 class="text-3xl font-bold text-gray-900 mb-2">${day.title}</h1>
+                                    <p class="text-gray-600">${weekData.title}</p>
+                                </div>
+                                <button onclick="app.toggleDay('${week}', ${index})" 
+                                        class="px-6 py-3 rounded-lg font-bold transition-all ${completed ? 'bg-green-500 hover:bg-green-600' : 'bg-indigo-500 hover:bg-indigo-600'} text-white">
+                                    ${completed ? '✓ Completado' : 'Marcar completo'}
+                                </button>
+                            </div>
+
+                            <div class="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-6 mb-6">
+                                <h2 class="font-bold text-blue-900 mb-2">🧠 Teoría</h2>
+                                <p class="text-blue-800">${day.theory}</p>
+                            </div>
+
+                            <div class="bg-green-50 border-l-4 border-green-500 rounded-lg p-6 mb-6">
+                                <h2 class="font-bold text-green-900 mb-3">✅ Práctica (paso a paso)</h2>
+                                <ol class="space-y-2">
+                                    ${day.practice.map((step, i) => `
+                                        <li class="flex items-start">
+                                            <span class="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5 flex-shrink-0">${i + 1}</span>
+                                            <span class="text-green-800">${step}</span>
+                                        </li>
+                                    `).join('')}
+                                </ol>
+                            </div>
+
+                            ${day.commands.length > 0 ? `
+                                <div class="bg-purple-50 border-l-4 border-purple-500 rounded-lg p-6 mb-6">
+                                    <h2 class="font-bold text-purple-900 mb-3">⌨️ Comandos clave</h2>
+                                    <div class="space-y-2">
+                                        ${day.commands.map(cmd => `
+                                            <div class="bg-gray-900 text-green-400 px-4 py-2 rounded font-mono text-sm">
+                                                ${cmd}
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            ` : ''}
+
+                            <div class="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6 mb-6">
+                                <h2 class="font-bold text-amber-900 mb-2">🎯 Checkpoint</h2>
+                                <p class="text-amber-800 font-semibold">${day.checkpoint}</p>
+                            </div>
+
+                            ${day.resources.length > 0 ? `
+                                <div class="bg-indigo-50 border-l-4 border-indigo-500 rounded-lg p-6">
+                                    <h2 class="font-bold text-indigo-900 mb-2">📚 Recursos</h2>
+                                    ${day.resources.map(url => `
+                                        <a href="${url}" target="_blank" class="text-indigo-600 hover:text-indigo-800 underline block">${url}</a>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        const app = new App();
+    </script>
+</body>
+</html>
